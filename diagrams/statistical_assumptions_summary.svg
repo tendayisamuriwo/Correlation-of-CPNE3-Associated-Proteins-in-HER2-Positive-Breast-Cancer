@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="1000" height="600" fill="#ffffff"/>
+    
+    <!-- Title -->
+    <text x="500" y="30" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold">
+        Statistical Assumption Tests Summary Across Cohorts
+    </text>
+
+    <!-- Discovery Cohort Section -->
+    <g transform="translate(0, 60)">
+        <!-- Discovery Header -->
+        <rect x="50" y="0" width="400" height="40" fill="#e3f2fd"/>
+        <text x="250" y="25" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">
+            Discovery Cohort
+        </text>
+
+        <!-- HER2 -->
+        <rect x="60" y="50" width="380" height="100" fill="#f8f9fa" stroke="#dee2e6"/>
+        <text x="70" y="70" font-family="Arial" font-size="14" font-weight="bold">HER2</text>
+        <text x="70" y="90" font-family="Arial" font-size="12">Normality: 73.0% passed</text>
+        <text x="70" y="110" font-family="Arial" font-size="12">Linearity: 11 strong correlations</text>
+        <text x="70" y="130" font-family="Arial" font-size="12">Homoscedasticity: 90.5% passed</text>
+
+        <!-- ERPR -->
+        <rect x="60" y="160" width="380" height="100" fill="#f8f9fa" stroke="#dee2e6"/>
+        <text x="70" y="180" font-family="Arial" font-size="14" font-weight="bold">ERPR</text>
+        <text x="70" y="200" font-family="Arial" font-size="12">Normality: 70.3% passed</text>
+        <text x="70" y="220" font-family="Arial" font-size="12">Linearity: 18 strong correlations</text>
+        <text x="70" y="240" font-family="Arial" font-size="12">Homoscedasticity: 93.5% passed</text>
+
+        <!-- Triple Negative -->
+        <rect x="60" y="270" width="380" height="100" fill="#f8f9fa" stroke="#dee2e6"/>
+        <text x="70" y="290" font-family="Arial" font-size="14" font-weight="bold">Triple Negative</text>
+        <text x="70" y="310" font-family="Arial" font-size="12">Normality: 70.3% passed</text>
+        <text x="70" y="330" font-family="Arial" font-size="12">Linearity: 37 strong correlations</text>
+        <text x="70" y="350" font-family="Arial" font-size="12">Homoscedasticity: 93.7% passed</text>
+    </g>
+
+    <!-- Validation Cohort Section -->
+    <g transform="translate(500, 60)">
+        <!-- Validation Header -->
+        <rect x="50" y="0" width="400" height="40" fill="#e3f2fd"/>
+        <text x="250" y="25" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">
+            Validation Cohort
+        </text>
+
+        <!-- Luminal A -->
+        <rect x="60" y="50" width="380" height="100" fill="#f8f9fa" stroke="#dee2e6"/>
+        <text x="70" y="70" font-family="Arial" font-size="14" font-weight="bold">Luminal A</text>
+        <text x="70" y="90" font-family="Arial" font-size="12">Normality: 82.6% passed</text>
+        <text x="70" y="110" font-family="Arial" font-size="12">Linearity: 20 strong correlations</text>
+        <text x="70" y="130" font-family="Arial" font-size="12">Homoscedasticity: 91.8% passed</text>
+
+        <!-- Luminal B -->
+        <rect x="60" y="160" width="380" height="100" fill="#f8f9fa" stroke="#dee2e6"/>
+        <text x="70" y="180" font-family="Arial" font-size="14" font-weight="bold">Luminal B</text>
+        <text x="70" y="200" font-family="Arial" font-size="12">Normality: 73.9% passed</text>
+        <text x="70" y="220" font-family="Arial" font-size="12">Linearity: 30 strong correlations</text>
+        <text x="70" y="240" font-family="Arial" font-size="12">Homoscedasticity: 90.1% passed</text>
+
+        <!-- Basal-like -->
+        <rect x="60" y="270" width="380" height="100" fill="#f8f9fa" stroke="#dee2e6"/>
+        <text x="70" y="290" font-family="Arial" font-size="14" font-weight="bold">Basal-like</text>
+        <text x="70" y="310" font-family="Arial" font-size="12">Normality: 80.4% passed</text>
+        <text x="70" y="330" font-family="Arial" font-size="12">Linearity: 45 strong correlations</text>
+        <text x="70" y="350" font-family="Arial" font-size="12">Homoscedasticity: 87.4% passed</text>
+
+        <!-- HER2-enriched -->
+        <rect x="60" y="380" width="380" height="100" fill="#f8f9fa" stroke="#dee2e6"/>
+        <text x="70" y="400" font-family="Arial" font-size="14" font-weight="bold">HER2-enriched</text>
+        <text x="70" y="420" font-family="Arial" font-size="12">Normality: 82.6% passed</text>
+        <text x="70" y="440" font-family="Arial" font-size="12">Linearity: 152 strong correlations</text>
+        <text x="70" y="460" font-family="Arial" font-size="12">Homoscedasticity: 98.6% passed</text>
+    </g>
+
+    <!-- Legend -->
+    <g transform="translate(50, 520)">
+        <text x="0" y="0" font-family="Arial" font-size="12" font-style="italic">
+            Note: Strong correlations defined as |r| > 0.7
+        </text>
+        <text x="0" y="20" font-family="Arial" font-size="12" font-style="italic">
+            Normality tested using Shapiro-Wilk test (α = 0.05)
+        </text>
+        <text x="0" y="40" font-family="Arial" font-size="12" font-style="italic">
+            Homoscedasticity tested using Breusch-Pagan test (α = 0.05)
+        </text>
+    </g>
+</svg>

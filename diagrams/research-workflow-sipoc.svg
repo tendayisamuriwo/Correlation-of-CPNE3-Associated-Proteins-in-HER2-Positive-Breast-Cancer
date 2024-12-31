@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+    <!-- Background -->
+    <rect width="1200" height="400" fill="#ffffff"/>
+    
+    <!-- Header -->
+    <text x="600" y="40" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold">
+        Proteomics Analysis Workflow
+    </text>
+    
+    <!-- Connecting Line -->
+    <line x1="100" y1="150" x2="1100" y2="150" stroke="#666666" stroke-width="2"/>
+    
+    <!-- Phase Circles -->
+    <circle cx="200" cy="150" r="15" fill="#FFB74D"/>
+    <circle cx="400" cy="150" r="15" fill="#FF7043"/>
+    <circle cx="600" cy="150" r="15" fill="#00796B"/>
+    <circle cx="800" cy="150" r="15" fill="#26A69A"/>
+    <circle cx="1000" cy="150" r="15" fill="#795548"/>
+    
+    <!-- Boxes -->
+    <g transform="translate(100,180)">
+        <!-- Data Sources Box -->
+        <rect width="200" height="150" rx="10" fill="#FFE0B2" stroke="#FFB74D" stroke-width="2"/>
+        <text x="100" y="40" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">Data Sources</text>
+        <text x="100" y="80" text-anchor="middle" font-family="Arial" font-size="14">TMT-MS Data</text>
+        <text x="100" y="100" text-anchor="middle" font-family="Arial" font-size="14">SILAC-MS</text>
+        <text x="100" y="120" text-anchor="middle" font-family="Arial" font-size="14">iTRAQ-MS</text>
+    </g>
+    
+    <g transform="translate(300,180)">
+        <!-- Input Data Box -->
+        <rect width="200" height="150" rx="10" fill="#FFCCBC" stroke="#FF7043" stroke-width="2"/>
+        <text x="100" y="40" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">Input Data</text>
+        <text x="100" y="80" text-anchor="middle" font-family="Arial" font-size="14">Discovery Cohort</text>
+        <text x="100" y="100" text-anchor="middle" font-family="Arial" font-size="14">n=40</text>
+        <text x="100" y="120" text-anchor="middle" font-family="Arial" font-size="14">Validation Cohort</text>
+        <text x="100" y="140" text-anchor="middle" font-family="Arial" font-size="14">n=75</text>
+    </g>
+    
+    <g transform="translate(500,180)">
+        <!-- Process Box -->
+        <rect width="200" height="150" rx="10" fill="#B2DFDB" stroke="#00796B" stroke-width="2"/>
+        <text x="100" y="40" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">Analysis</text>
+        <text x="100" y="70" text-anchor="middle" font-family="Arial" font-size="14">Normality Testing</text>
+        <text x="100" y="90" text-anchor="middle" font-family="Arial" font-size="14">Linearity Testing</text>
+        <text x="100" y="110" text-anchor="middle" font-family="Arial" font-size="14">Homoscedasticity</text>
+        <text x="100" y="130" text-anchor="middle" font-family="Arial" font-size="14">Correlation Analysis</text>
+    </g>
+    
+    <g transform="translate(700,180)">
+        <!-- Output Box -->
+        <rect width="200" height="150" rx="10" fill="#80CBC4" stroke="#26A69A" stroke-width="2"/>
+        <text x="100" y="40" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">Results</text>
+        <text x="100" y="80" text-anchor="middle" font-family="Arial" font-size="14">Statistical Tests</text>
+        <text x="100" y="100" text-anchor="middle" font-family="Arial" font-size="14">Pearson Correlation</text>
+        <text x="100" y="120" text-anchor="middle" font-family="Arial" font-size="14">Spearman Correlation</text>
+    </g>
+    
+    <g transform="translate(900,180)">
+        <!-- Outcomes Box -->
+        <rect width="200" height="150" rx="10" fill="#D7CCC8" stroke="#795548" stroke-width="2"/>
+        <text x="100" y="40" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">Outcomes</text>
+        <text x="100" y="80" text-anchor="middle" font-family="Arial" font-size="14">Protein Associations</text>
+        <text x="100" y="100" text-anchor="middle" font-family="Arial" font-size="14">Clinical Relevance</text>
+        <text x="100" y="120" text-anchor="middle" font-family="Arial" font-size="14">Biomarker Validation</text>
+    </g>
+    
+    <!-- Headers -->
+    <text x="200" y="120" text-anchor="middle" font-family="Arial" font-size="16" fill="#666666">Sources</text>
+    <text x="400" y="120" text-anchor="middle" font-family="Arial" font-size="16" fill="#666666">Inputs</text>
+    <text x="600" y="120" text-anchor="middle" font-family="Arial" font-size="16" fill="#666666">Process</text>
+    <text x="800" y="120" text-anchor="middle" font-family="Arial" font-size="16" fill="#666666">Outputs</text>
+    <text x="1000" y="120" text-anchor="middle" font-family="Arial" font-size="16" fill="#666666">Outcomes</text>
+</svg>

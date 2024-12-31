@@ -1,0 +1,60 @@
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+Significant CPNE3 correlations in Luminal A cohort:Significant CPNE3 correlations in Luminal B cohort:Significant CPNE3 correlations in Basal-like cohort:Significant CPNE3 correlations in HER2-enriched cohort:
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+Protein	Correlation	P-ValueProtein	Correlation	P-ValueProtein	Correlation	P-ValueProtein	Correlation	P-Value
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+PPP6R2	0.486	1.874e-02LRPPRC	0.505	5.213e-03$proteinsHIST1H4A	-0.849	1.557e-02
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+KARS	-0.415	4.921e-02EIF5A	0.425	2.165e-02character(0)PYGM	0.849	1.566e-02
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+$proteinsVDAC2	0.417	2.432e-02EIF5A	0.802	2.999e-02
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+[1] "PPP6R2" "KARS"  RANBP1	0.393	3.481e-02$correlations$proteins
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+PRDX3	0.371	4.754e-02named numeric(0)[1] "HIST1H4A" "PYGM"     "EIF5A"   
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+$correlations$proteins
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+    PPP6R2       KARS [1] "LRPPRC" "EIF5A"  "VDAC2"  "RANBP1" "PRDX3" $p_values$correlations
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+ 0.4858952 -0.4145571 named numeric(0)  HIST1H4A       PYGM      EIF5A 
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+$correlations-0.8493568  0.8490167  0.8020850 
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+$p_values   LRPPRC     EIF5A     VDAC2    RANBP1     PRDX3 
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+    PPP6R2       KARS 0.5049274 0.4246950 0.4172740 0.3932788 0.3710086 Significant CPNE3 correlations in Basal-like cohort:$p_values
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+0.01874097 0.04920589 ----------------------------------------  HIST1H4A       PYGM      EIF5A 
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+$p_valuesProtein	Correlation	P-Value0.01557212 0.01565717 0.02999019 
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+     LRPPRC       EIF5A       VDAC2      RANBP1       PRDX3 $proteins
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+Significant CPNE3 correlations in Luminal A cohort:0.005212776 0.021654201 0.024316015 0.034806208 0.047544230 character(0)
+CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS
+=============================================
+----------------------------------------Significant CPNE3 correlations in HER2-enriched cohort:

@@ -1,0 +1,90 @@
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+Significant CPNE3 correlations in HER2 cohort:Significant CPNE3 correlations in Triple Negative cohort:Significant CPNE3 correlations in ERPR cohort:
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+------------------------------------------------------------------------------------------------------------------------
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+Protein	Correlation	P-ValueProtein	Correlation	P-ValueProtein	Correlation	P-Value
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+SLC25A3	0.753	1.182e-03RHOC	0.806	2.763e-03HIST1H4A	-0.860	8.112e-05
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+CACYBP	0.718	2.573e-03CALML3	0.764	6.231e-03EIF5A	-0.727	3.191e-03
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+PRKCSH	0.643	9.673e-03PRDX3	-0.705	1.550e-02RPL19	-0.579	2.991e-02
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+RPL19	0.640	1.016e-02CS	0.663	2.622e-02$proteins
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+BOLA2	0.626	1.249e-02$proteins[1] "HIST1H4A" "EIF5A"    "RPL19"   
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+CANX	0.551	3.315e-02[1] "RHOC"   "CALML3" "PRDX3"  "CS"    
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+LRPPRC	0.540	3.762e-02$correlations
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+HSPE1	0.526	4.402e-02$correlations  HIST1H4A      EIF5A      RPL19 
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+ATP5B	0.521	4.626e-02      RHOC     CALML3      PRDX3         CS -0.8596098 -0.7274649 -0.5793694 
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+EIF5A	0.516	4.877e-02 0.8055626  0.7636559 -0.7045093  0.6628560 
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+$proteins$p_values
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+ [1] "SLC25A3" "CACYBP"  "PRKCSH"  "RPL19"   "BOLA2"   "CANX"    "LRPPRC" $p_values    HIST1H4A        EIF5A        RPL19 
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+ [8] "HSPE1"   "ATP5B"   "EIF5A"         RHOC      CALML3       PRDX3          CS 0.0000811224 0.0031910944 0.0299082676 
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+0.002763288 0.006230936 0.015497793 0.026223047 
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+$correlations
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+  SLC25A3    CACYBP    PRKCSH     RPL19     BOLA2      CANX    LRPPRC     HSPE1 Significant CPNE3 correlations in ERPR cohort:
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+0.7534243 0.7180049 0.6433054 0.6400920 0.6262797 0.5513027 0.5402306 0.5259704 Significant CPNE3 correlations in Triple Negative cohort:----------------------------------------
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+    ATP5B     EIF5A ----------------------------------------Protein	Correlation	P-Value
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+0.5213360 0.5163633 Protein	Correlation	P-ValueHIST1H4A	-0.860	8.112e-05
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+RHOC	0.806	2.763e-03EIF5A	-0.727	3.191e-03
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+$p_valuesCALML3	0.764	6.231e-03RPL19	-0.579	2.991e-02
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+    SLC25A3      CACYBP      PRKCSH       RPL19       BOLA2        CANX PRDX3	-0.705	1.550e-02$proteins
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+0.001181703 0.002573410 0.009672741 0.010162569 0.012492268 0.033151338 CS	0.663	2.622e-02[1] "HIST1H4A" "EIF5A"    "RPL19"   
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+     LRPPRC       HSPE1       ATP5B       EIF5A $proteins
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+0.037620478 0.044020866 0.046264860 0.048765527 [1] "RHOC"   "CALML3" "PRDX3"  "CS"    $correlations
+CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS
+=============================================
+  HIST1H4A      EIF5A      RPL19 

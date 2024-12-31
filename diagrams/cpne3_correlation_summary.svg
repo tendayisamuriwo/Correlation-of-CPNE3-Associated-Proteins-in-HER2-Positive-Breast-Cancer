@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800">
+    <!-- Background -->
+    <rect width="1000" height="800" fill="#ffffff"/>
+    
+    <!-- Title -->
+    <text x="500" y="40" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold">
+        CPNE3 Correlation Analysis Summary
+    </text>
+
+    <!-- Discovery Cohort Section -->
+    <g transform="translate(50, 80)">
+        <!-- Discovery Header -->
+        <rect x="0" y="0" width="400" height="40" fill="#e3f2fd"/>
+        <text x="200" y="25" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">
+            Discovery Cohort
+        </text>
+
+        <!-- HER2 -->
+        <rect x="10" y="50" width="380" height="140" fill="#f8f9fa" stroke="#dee2e6"/>
+        <text x="20" y="70" font-family="Arial" font-size="14" font-weight="bold">HER2</text>
+        <text x="20" y="90" font-family="Arial" font-size="12">Pearson: 10 significant correlations</text>
+        <text x="20" y="110" font-family="Arial" font-size="12">Top: SLC25A3 (r=0.753, p=1.18e-03)</text>
+        <text x="20" y="130" font-family="Arial" font-size="12">Spearman: 7 significant correlations</text>
+        <text x="20" y="150" font-family="Arial" font-size="12">Top: BOLA2 (rho=0.696, p=3.92e-03)</text>
+        <text x="20" y="170" font-family="Arial" font-size="12" fill="#666666">Common: PRKCSH, RPL19, BOLA2, CANX</text>
+
+        <!-- Triple Negative -->
+        <rect x="10" y="200" width="380" height="140" fill="#f8f9fa" stroke="#dee2e6"/>
+        <text x="20" y="220" font-family="Arial" font-size="14" font-weight="bold">Triple Negative</text>
+        <text x="20" y="240" font-family="Arial" font-size="12">Pearson: 4 significant correlations</text>
+        <text x="20" y="260" font-family="Arial" font-size="12">Top: RHOC (r=0.806, p=2.76e-03)</text>
+        <text x="20" y="280" font-family="Arial" font-size="12">Spearman: 5 significant correlations</text>
+        <text x="20" y="300" font-family="Arial" font-size="12">Top: PRDX3 (rho=-0.864, p=6.12e-04)</text>
+        <text x="20" y="320" font-family="Arial" font-size="12" fill="#666666">Common: PRDX3</text>
+
+        <!-- ERPR -->
+        <rect x="10" y="350" width="380" height="140" fill="#f8f9fa" stroke="#dee2e6"/>
+        <text x="20" y="370" font-family="Arial" font-size="14" font-weight="bold">ERPR</text>
+        <text x="20" y="390" font-family="Arial" font-size="12">Pearson: 3 significant correlations</text>
+        <text x="20" y="410" font-family="Arial" font-size="12">Top: HIST1H4A (r=-0.860, p=8.11e-05)</text>
+        <text x="20" y="430" font-family="Arial" font-size="12">Spearman: 2 significant correlations</text>
+        <text x="20" y="450" font-family="Arial" font-size="12">Top: HIST1H4A (rho=-0.836, p=1.95e-04)</text>
+        <text x="20" y="470" font-family="Arial" font-size="12" fill="#666666">Common: HIST1H4A, EIF5A</text>
+    </g>
+
+    <!-- Validation Cohort Section -->
+    <g transform="translate(500, 80)">
+        <!-- Validation Header -->
+        <rect x="0" y="0" width="400" height="40" fill="#e3f2fd"/>
+        <text x="200" y="25" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">
+            Validation Cohort
+        </text>
+
+        <!-- Luminal A -->
+        <rect x="10" y="50" width="380" height="140" fill="#f8f9fa" stroke="#dee2e6"/>
+        <text x="20" y="70" font-family="Arial" font-size="14" font-weight="bold">Luminal A</text>
+        <text x="20" y="90" font-family="Arial" font-size="12">Pearson: 2 significant correlations</text>
+        <text x="20" y="110" font-family="Arial" font-size="12">Top: PPP6R2 (r=0.486, p=1.87e-02)</text>
+        <text x="20" y="130" font-family="Arial" font-size="12">Spearman: 4 significant correlations</text>
+        <text x="20" y="150" font-family="Arial" font-size="12">Top: KARS (rho=-0.456, p=2.89e-02)</text>
+        <text x="20" y="170" font-family="Arial" font-size="12" fill="#666666">Common: KARS, PPP6R2</text>
+
+        <!-- Luminal B -->
+        <rect x="10" y="200" width="380" height="140" fill="#f8f9fa" stroke="#dee2e6"/>
+        <text x="20" y="220" font-family="Arial" font-size="14" font-weight="bold">Luminal B</text>
+        <text x="20" y="240" font-family="Arial" font-size="12">Pearson: 5 significant correlations</text>
+        <text x="20" y="260" font-family="Arial" font-size="12">Top: LRPPRC (r=0.505, p=5.21e-03)</text>
+        <text x="20" y="280" font-family="Arial" font-size="12">Spearman: 6 significant correlations</text>
+        <text x="20" y="300" font-family="Arial" font-size="12">Top: LRPPRC (rho=0.509, p=4.82e-03)</text>
+        <text x="20" y="320" font-family="Arial" font-size="12" fill="#666666">Common: LRPPRC, VDAC2, RANBP1, EIF5A, PRDX3</text>
+
+        <!-- Basal-like -->
+        <rect x="10" y="350" width="380" height="140" fill="#f8f9fa" stroke="#dee2e6"/>
+        <text x="20" y="370" font-family="Arial" font-size="14" font-weight="bold">Basal-like</text>
+        <text x="20" y="390" font-family="Arial" font-size="12">Pearson: No significant correlations</text>
+        <text x="20" y="410" font-family="Arial" font-size="12">Spearman: No significant correlations</text>
+
+        <!-- HER2-enriched -->
+        <rect x="10" y="500" width="380" height="140" fill="#f8f9fa" stroke="#dee2e6"/>
+        <text x="20" y="520" font-family="Arial" font-size="14" font-weight="bold">HER2-enriched</text>
+        <text x="20" y="540" font-family="Arial" font-size="12">Pearson: 3 significant correlations</text>
+        <text x="20" y="560" font-family="Arial" font-size="12">Top: HIST1H4A (r=-0.849, p=1.56e-02)</text>
+        <text x="20" y="580" font-family="Arial" font-size="12">Spearman: 4 significant correlations</text>
+        <text x="20" y="600" font-family="Arial" font-size="12">Top: EIF5A (rho=0.857, p=1.37e-02)</text>
+        <text x="20" y="620" font-family="Arial" font-size="12" fill="#666666">Common: EIF5A, PYGM</text>
+    </g>
+
+    <!-- Legend -->
+    <g transform="translate(50, 750)">
+        <text x="0" y="0" font-family="Arial" font-size="12" font-style="italic">
+            Note: Significance threshold p &lt; 0.05
+        </text>
+        <text x="0" y="20" font-family="Arial" font-size="12" font-style="italic">
+            Common proteins are those significant in both Pearson and Spearman analyses
+        </text>
+    </g>
+</svg>

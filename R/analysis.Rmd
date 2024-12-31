@@ -1,0 +1,283 @@
+---
+title: "Correlation of CPNE3-Associated Proteins in HER2-Positive Breast Cancer"
+author: "Tendayi Samuriwo"
+date: "2024-11-18"
+knit: (function(inputFile, encoding) {
+    rmarkdown::render(inputFile,
+                     encoding=encoding,
+                     output_dir='../outputs/html')
+  })
+output:
+  html_document:    # HTML output settings
+    toc: true      # Include table of contents
+    toc_float: true    # Floating sidebar navigation
+    toc_depth: 3   # Headers up to level 3 in TOC
+    code_folding: show    # Expandable code sections
+    theme: flatly  # Modern color theme
+    highlight: tango    # Code syntax highlighting style
+    fig_caption: true   # Enable figure captions
+    df_print: paged    # Interactive table display
+  pdf_document:    # PDF output settings
+    toc: true
+    toc_depth: 3
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,          # Show code chunks
+  warning = FALSE,      # Hide warnings
+  message = FALSE,      # Hide messages
+  fig.width = 10,       # Default figure width
+  fig.height = 8,       # Default figure height
+  out.width = "100%"    # Output figure width
+)
+# Set working directory
+knitr::opts_knit$set(root.dir = getwd())
+```
+
+## Load required libraries
+
+```{r}
+library(corrplot)
+library(stats)
+library(dendextend)
+library(car)  # For ncvTest
+```
+
+## Setup and Data Loading
+
+```{r}
+# Load Statistical Analysis Functions 
+source("statistical_analysis_functions.R")  # Load test functions
+
+# Quietly move up one directory level from R/ to the project root
+suppressMessages(setwd(".."))
+
+# Load data files silently
+suppressMessages(suppressWarnings(
+  tryCatch({
+    # Discovery cohort
+    HER2 <- read.csv("data/discovery_cohort/37POI-Her2.csv")
+    TN <- read.csv("data/discovery_cohort/37POI-TN.csv")
+    ERPR <- read.csv("data/discovery_cohort/37POI-ERPR.csv")
+    
+    # Validation cohort
+    Luminal_A <- read.csv("data/validation_cohort/45POI-Luminal_A.csv")
+    Luminal_B <- read.csv("data/validation_cohort/45POI-Luminal_B.csv")
+    Basal <- read.csv("data/validation_cohort/45POI-Basal-like.csv")
+    HER2E <- read.csv("data/validation_cohort/45POI-Her2.csv")
+  }, error = function(e) {
+    stop("Error loading data files: ", e$message)
+  })
+))
+```
+
+## Statistical Assumption Testing
+
+```{r assumption_testing}
+# Test assumptions for each cohort
+cat("\n=== DISCOVERY COHORT ===\n")
+her2_summary <- summarise_assumptions(HER2, "HER2")
+tn_summary <- summarise_assumptions(TN, "Triple Negative")
+erpr_summary <- summarise_assumptions(ERPR, "ERPR")
+
+cat("\n=== VALIDATION COHORT ===\n")
+luma_summary <- summarise_assumptions(Luminal_A, "Luminal A")
+lumb_summary <- summarise_assumptions(Luminal_B, "Luminal B")
+basal_summary <- summarise_assumptions(Basal, "Basal-like")
+her2e_summary <- summarise_assumptions(HER2E, "HER2-enriched")
+```
+
+## Generate Pearson Correlation Visualisations with CPNE3 Correlations
+
+```{r correlation_plots, fig.width=12, fig.height=12}
+# Calculate correlations
+cor_HER2 <- cor(HER2[,-1], method="pearson")
+cor_TN <- cor(TN[,-1], method="pearson")
+cor_ERPR <- cor(ERPR[,-1], method="pearson")
+
+# Discovery cohort plots and CPNE3 correlations
+par(mfrow=c(2,2), oma=c(2,2,2,2))  # Set outer margins
+plot_correlation_with_clusters(cor_HER2, "HER2 Subtype Correlations")
+plot_correlation_with_clusters(cor_TN, "Triple Negative Subtype Correlations")
+plot_correlation_with_clusters(cor_ERPR, "ER/PR Subtype Correlations")
+
+# Print CPNE3 correlation analysis header
+cat("\nCPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS\n")
+cat("===================================================\n")
+
+# Get CPNE3 correlations for each cohort
+her2_cpne3 <- get_cpne3_correlations(HER2, "HER2")
+tn_cpne3 <- get_cpne3_correlations(TN, "Triple Negative")
+erpr_cpne3 <- get_cpne3_correlations(ERPR, "ERPR")
+```
+
+```{r validation_plots, fig.width=12, fig.height=12}
+# Calculate validation cohort correlations
+cor_LumA <- cor(Luminal_A[,-1], method="pearson")
+cor_LumB <- cor(Luminal_B[,-1], method="pearson")
+cor_Basal <- cor(Basal[,-1], method="pearson")
+cor_HER2E <- cor(HER2E[,-1], method="pearson")
+
+# First create all plots
+par(mfrow=c(2,2), oma=c(2,2,2,2))  # Set outer margins
+plot_correlation_with_clusters(cor_LumA, "Luminal A Correlations")
+plot_correlation_with_clusters(cor_LumB, "Luminal B Correlations")
+plot_correlation_with_clusters(cor_Basal, "Basal-like Correlations")
+plot_correlation_with_clusters(cor_HER2E, "HER2-enriched Correlations")
+
+# Print CPNE3 correlation analysis header
+cat("\nCPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS\n")
+cat("===================================================\n")
+
+# Get and display CPNE3 correlations for validation cohorts
+luma_cpne3 <- get_cpne3_correlations(Luminal_A, "Luminal A")
+lumb_cpne3 <- get_cpne3_correlations(Luminal_B, "Luminal B")
+basal_cpne3 <- get_cpne3_correlations(Basal, "Basal-like")
+her2e_cpne3 <- get_cpne3_correlations(HER2E, "HER2-enriched")
+```
+
+## Generate Spearman Correlation Visualisations with CPNE3 Correlations
+
+```{r spearman_correlation_plots, fig.width=12, fig.height=12}
+# Calculate Spearman correlations
+spear_HER2 <- cor(HER2[,-1], method="spearman")
+spear_TN <- cor(TN[,-1], method="spearman")
+spear_ERPR <- cor(ERPR[,-1], method="spearman")
+
+# Discovery cohort Spearman plots
+par(mfrow=c(2,2), oma=c(2,2,2,2))  # Set outer margins
+plot_correlation_with_clusters(spear_HER2, "HER2 Subtype Spearman Correlations")
+plot_correlation_with_clusters(spear_TN, "Triple Negative Subtype Spearman Correlations")
+plot_correlation_with_clusters(spear_ERPR, "ER/PR Subtype Spearman Correlations")
+
+# Print CPNE3 correlation analysis
+cat("\nCPNE3 SPEARMAN CORRELATION ANALYSIS - DISCOVERY COHORTS\n")
+cat("===================================================\n")
+cat(get_spearman_cpne3_correlations(HER2, "HER2"))
+cat(get_spearman_cpne3_correlations(TN, "Triple Negative"))
+cat(get_spearman_cpne3_correlations(ERPR, "ERPR"))
+```
+
+```{r spearman_validation_plots, fig.width=12, fig.height=12}
+# Calculate validation cohort Spearman correlations
+spear_LumA <- cor(Luminal_A[,-1], method="spearman")
+spear_LumB <- cor(Luminal_B[,-1], method="spearman")
+spear_Basal <- cor(Basal[,-1], method="spearman")
+spear_HER2E <- cor(HER2E[,-1], method="spearman")
+
+# Validation cohort Spearman plots
+par(mfrow=c(2,2), oma=c(2,2,2,2))  # Set outer margins
+plot_correlation_with_clusters(spear_LumA, "Luminal A Spearman Correlations")
+plot_correlation_with_clusters(spear_LumB, "Luminal B Spearman Correlations")
+plot_correlation_with_clusters(spear_Basal, "Basal-like Spearman Correlations")
+plot_correlation_with_clusters(spear_HER2E, "HER2-enriched Spearman Correlations")
+
+# Print CPNE3 correlation analysis
+cat("\nCPNE3 SPEARMAN CORRELATION ANALYSIS - VALIDATION COHORTS\n")
+cat("===================================================\n")
+cat(get_spearman_cpne3_correlations(Luminal_A, "Luminal A"))
+cat(get_spearman_cpne3_correlations(Luminal_B, "Luminal B"))
+cat(get_spearman_cpne3_correlations(Basal, "Basal-like"))
+cat(get_spearman_cpne3_correlations(HER2E, "HER2-enriched"))
+```
+## Save Correlation Results and Plots to Output Folder
+
+```{r save_plots, message=FALSE, results='hide'}
+# Create organized output directories in project root
+dir.create("../outputs/correlation_plots", recursive = TRUE, showWarnings = FALSE)
+dir.create("../outputs/results", recursive = TRUE, showWarnings = FALSE)
+
+# Discovery cohort plots and correlations
+pdf("../outputs/correlation_plots/discovery_cohort_correlations.pdf", width=12, height=12)
+par(mfrow=c(2,2), oma=c(2,2,2,2))  # Set outer margins
+suppressMessages(suppressWarnings({
+  plot_correlation_with_clusters(cor_HER2, "HER2 Subtype Correlations")
+  plot_correlation_with_clusters(cor_TN, "Triple Negative Subtype Correlations")
+  plot_correlation_with_clusters(cor_ERPR, "ER/PR Subtype Correlations")
+}))
+invisible(dev.off())
+
+# Save validation cohort plots and correlations
+pdf("../outputs/correlation_plots/validation_cohort_correlations.pdf", width=12, height=12)
+par(mfrow=c(2,2), oma=c(2,2,2,2))
+suppressMessages(suppressWarnings({
+  plot_correlation_with_clusters(cor_LumA, "Luminal A Correlations")
+  plot_correlation_with_clusters(cor_LumB, "Luminal B Correlations")
+  plot_correlation_with_clusters(cor_Basal, "Basal-like Correlations")
+  plot_correlation_with_clusters(cor_HER2E, "HER2-enriched Correlations")
+}))
+invisible(dev.off())
+
+# Save discovery cohorts correlation analysis
+discovery_results <- suppressMessages(suppressWarnings(
+  paste0(
+    "CPNE3 CORRELATION ANALYSIS - DISCOVERY COHORTS\n",
+    "=============================================\n",
+    capture.output(get_cpne3_correlations(HER2, "HER2")),
+    capture.output(get_cpne3_correlations(TN, "Triple Negative")),
+    capture.output(get_cpne3_correlations(ERPR, "ERPR"))
+  )
+))
+suppressMessages(writeLines(discovery_results, "../outputs/results/discovery_cohort_correlations.txt"))
+
+# Save validation cohorts correlation analysis
+validation_results <- suppressMessages(suppressWarnings(
+  paste0(
+    "CPNE3 CORRELATION ANALYSIS - VALIDATION COHORTS\n",
+    "=============================================\n",
+    capture.output(get_cpne3_correlations(Luminal_A, "Luminal A")),
+    capture.output(get_cpne3_correlations(Luminal_B, "Luminal B")),
+    capture.output(get_cpne3_correlations(Basal, "Basal-like")),
+    capture.output(get_cpne3_correlations(HER2E, "HER2-enriched"))
+  )
+))
+suppressMessages(writeLines(validation_results, "../outputs/results/validation_cohort_correlations.txt"))
+
+# Save discovery cohort Spearman plots
+pdf("../outputs/correlation_plots/discovery_cohort_spearman_correlations.pdf", width=12, height=12)
+par(mfrow=c(2,2), oma=c(2,2,2,2))
+suppressMessages(suppressWarnings({
+  plot_correlation_with_clusters(spear_HER2, "HER2 Subtype Spearman Correlations")
+  plot_correlation_with_clusters(spear_TN, "Triple Negative Subtype Spearman Correlations")
+  plot_correlation_with_clusters(spear_ERPR, "ER/PR Subtype Spearman Correlations")
+}))
+invisible(dev.off())
+
+# Save discovery cohort Spearman correlation analysis
+discovery_results <- suppressMessages(suppressWarnings(
+  paste0(
+    "CPNE3 SPEARMAN CORRELATION ANALYSIS - DISCOVERY COHORTS\n",
+    "===================================================\n",
+    capture.output(get_spearman_cpne3_correlations(HER2, "HER2")),
+    capture.output(get_spearman_cpne3_correlations(TN, "Triple Negative")),
+    capture.output(get_spearman_cpne3_correlations(ERPR, "ERPR"))
+  )
+))
+suppressMessages(writeLines(discovery_results, "../outputs/results/discovery_cohort_spearman_correlations.txt"))
+
+# Save validation cohort Spearman plots
+pdf("../outputs/correlation_plots/validation_cohort_spearman_correlations.pdf", width=12, height=12)
+par(mfrow=c(2,2), oma=c(2,2,2,2))
+suppressMessages(suppressWarnings({
+  plot_correlation_with_clusters(spear_LumA, "Luminal A Spearman Correlations")
+  plot_correlation_with_clusters(spear_LumB, "Luminal B Spearman Correlations")
+  plot_correlation_with_clusters(spear_Basal, "Basal-like Spearman Correlations")
+  plot_correlation_with_clusters(spear_HER2E, "HER2-enriched Spearman Correlations")
+}))
+invisible(dev.off())
+
+# Save validation cohort Spearman correlation analysis
+validation_results <- suppressMessages(suppressWarnings(
+  paste0(
+    "CPNE3 SPEARMAN CORRELATION ANALYSIS - VALIDATION COHORTS\n",
+    "===================================================\n",
+    capture.output(get_spearman_cpne3_correlations(Luminal_A, "Luminal A")),
+    capture.output(get_spearman_cpne3_correlations(Luminal_B, "Luminal B")),
+    capture.output(get_spearman_cpne3_correlations(Basal, "Basal-like")),
+    capture.output(get_spearman_cpne3_correlations(HER2E, "HER2-enriched"))
+  )
+))
+suppressMessages(writeLines(validation_results, "../outputs/results/validation_cohort_spearman_correlations.txt"))
+```
+
